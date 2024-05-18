@@ -5,11 +5,13 @@ namespace LucasFidelis\MercadoLivreSdk\Client;
 use LucasFidelis\MercadoLivreSdk\Common\Http\HttpClientFactory;
 use LucasFidelis\MercadoLivreSdk\Common\Http\HttpClientInterface;
 use LucasFidelis\MercadoLivreSdk\Common\Http\HttpMethod;
+use LucasFidelis\MercadoLivreSdk\Entities\User;
 
 class Client
 {
     protected static $API_URL = 'https://api.mercadolibre.com';
     protected static $OAUTH_URL = '/oauth/token';
+    protected static $USERS_ME_URL = '/users/me';
 
     private string $redirect_uri;
     private HttpClientInterface $httpClient;
@@ -48,5 +50,18 @@ class Client
         $this->refresh_token = $data['refresh_token'];
 
         return $response;
+    }
+
+    public function getMe(): User
+    {
+        $url = self::$API_URL . self::$USERS_ME_URL;
+        $headers = [
+            'Accept: */*',
+            'Authorization: Bearer ' . $this->token
+        ];
+        $response = $this->httpClient->request($url, HttpMethod::GET, $headers);
+        $data = json_decode($response, true);
+        $user = User::fromJson($data);
+        return $user;
     }
 }
