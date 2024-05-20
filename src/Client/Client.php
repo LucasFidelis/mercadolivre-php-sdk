@@ -64,4 +64,19 @@ class Client
         $user = User::fromJson($data);
         return $user;
     }
+
+    public function getApiURL(): string
+    {
+        return self::$API_URL;
+    }
+
+    public function get(string $uri, array $headers = []): string
+    {
+        $headers = [
+            ...$headers,
+            'Accept: */*',
+            'Authorization: Bearer ' . $this->token
+        ];
+        return $this->httpClient->request($uri, HttpMethod::GET, $headers);
+    }
 }
