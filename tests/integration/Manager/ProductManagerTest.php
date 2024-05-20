@@ -23,4 +23,12 @@ class ProductManagerTest extends TestCase
         $product = $this->sut->findById('MLB3126075382');
         $this->assertInstanceOf(Product::class, $product);
     }
+
+    public function testMustFindAllBySellerId(): void
+    {
+        $products = $this->sut->findAllBySellerId(USER_ID);
+        $this->assertIsArray($products);
+        $this->assertNotTrue(empty($products));
+        $this->assertNotTrue(empty($products[0]));
+    }
 }
