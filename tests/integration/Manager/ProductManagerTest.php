@@ -41,7 +41,7 @@ class ProductManagerTest extends TestCase
     public function testMustUpdateProductVariations(): void {
         $product = $this->sut->findById('MLB3126075382');
         $variations = $product->getVariations();
-        $newAvailableQty = $variations[0]->getAvailableQuantity() + 10;
+        $newAvailableQty = $variations[0]->getAvailableQuantity();
         $variations[0]->setAvailableQuantity($newAvailableQty);
         $product->setVariations($variations);
         $product = $this->sut->updateVariations($product);
@@ -54,5 +54,11 @@ class ProductManagerTest extends TestCase
         $qty = $product->getAvailableQuantity();
         $product = $this->sut->updateAvailableQuantity($product);
         $this->assertEquals($product->getAvailableQuantity(), $qty);
+    }
+
+    public function testMustGetPrices(): void {
+        $prices = $this->sut->getPrices('MLB3617049700');
+        $this->assertIsArray($prices);
+        $this->assertIsFloat($prices[0]->getAmount());
     }
 }
