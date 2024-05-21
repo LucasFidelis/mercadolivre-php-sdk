@@ -48,4 +48,11 @@ class ProductManagerTest extends TestCase
         $availableQuantity = $product->getVariations()[0]->getAvailableQuantity();
         $this->assertEquals($availableQuantity, $newAvailableQty);
     }
+
+    public function testMustUpdateAvailableQuantity(): void {
+        $product = $this->sut->findById('MLB3617049700');
+        $qty = $product->getAvailableQuantity();
+        $product = $this->sut->updateAvailableQuantity($product);
+        $this->assertEquals($product->getAvailableQuantity(), $qty);
+    }
 }
