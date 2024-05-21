@@ -5,12 +5,12 @@ namespace LucasFidelis\MercadoLivreSdk\Entities\Product;
 class Values
 {
 	public string|null $id;
-	public string $name;
+	public ?string $name;
 	public array|null $struct;
 
 	public function __construct(
 		string|null $id,
-		string $name,
+		?string $name,
 		array|null $struct
 	) {
 		$this->id = $id;

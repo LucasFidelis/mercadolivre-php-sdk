@@ -7,7 +7,7 @@ class Attributes
 	public string $id;
 	public string $name;
 	public ?string $valueId;
-	public string $valueName;
+	public ?string $valueName;
 	/** @var Values[] */
 	public array $values;
 	public string $valueType;
@@ -19,7 +19,7 @@ class Attributes
 		string $id,
 		string $name,
 		?string $valueId,
-		string $valueName,
+		?string $valueName,
 		array $values,
 		string $valueType
 	) {

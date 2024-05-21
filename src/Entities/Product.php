@@ -67,7 +67,7 @@ class Product implements \JsonSerializable
     public string $warranty;
     public string $catalogProductId;
     public string $domainId;
-    public null $sellerCustomField;
+    public ?string $sellerCustomField;
     public null $parentItemId;
     public null $differentialPricing;
     /** @var string[] */
@@ -75,7 +75,7 @@ class Product implements \JsonSerializable
     public bool $automaticRelist;
     public string $dateCreated;
     public string $lastUpdated;
-    public float $health;
+    public ?float $health;
     public bool $catalogListing;
     public array $itemRelations;
     /** @var string[] */
@@ -139,14 +139,14 @@ class Product implements \JsonSerializable
         string $warranty,
         string $catalogProductId,
         string $domainId,
-        null $sellerCustomField,
+        ?string $sellerCustomField,
         null $parentItemId,
         null $differentialPricing,
         array $dealIds,
         bool $automaticRelist,
         string $dateCreated,
         string $lastUpdated,
-        float $health,
+        ?float $health,
         bool $catalogListing,
         array $itemRelations,
         array $channels
@@ -831,7 +831,7 @@ class Product implements \JsonSerializable
         return $this;
     }
 
-    public function setSellerCustomField(null $sellerCustomField): self
+    public function setSellerCustomField(?string $sellerCustomField): self
     {
         $this->sellerCustomField = $sellerCustomField;
         return $this;
