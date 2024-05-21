@@ -105,4 +105,16 @@ class ProductManager extends Manager
         }
         return $prices;
     }
+
+    public function updatePrice(Product $product): Product
+    {
+        $itemId = $product->getId();
+        $url = parent::factoryURL(self::$ITEM_URL, ['itemId' => $itemId]);
+        $body = [
+            'price' => $product->getPrice(),
+        ];
+        $body = json_encode($body);
+        $this->client->put($url, $body);
+        return $this->findById($itemId);
+    }
 }
