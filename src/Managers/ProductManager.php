@@ -9,6 +9,7 @@ class ProductManager extends Manager
 {
     protected static $FIND_BY_ID_URL = '/items/{itemId}/';
     protected static $FIND_ALL_BY_SELLER_ID = '/users/{sellerId}/items/search';
+    protected static $SALE_PRICE = '/items/{itemId}/sale_price?context={channel}.{loyaltyLevel}';
 
     public function findById($itemId): Product
     {
@@ -21,7 +22,8 @@ class ProductManager extends Manager
     /**
      * @return string[]
      */
-    public function findAllBySellerId(string $sellerId): array {
+    public function findAllBySellerId(string $sellerId): array
+    {
         $products = [];
         $total = 0;
         $scrollId = '';
@@ -41,7 +43,21 @@ class ProductManager extends Manager
                 $products[] = $result;
             }
         } while (count($products) < $total);
-        
+
         return $products;
+    }
+
+    public function getSalePrice(string $itemId, string $channel, string $loyaltyLevel): array
+    {
+        $url = parent::factoryURL(
+            self::$SALE_PRICE,
+            [
+                'itemId' => $itemId,
+                'channel' => $channel,
+                'loyaltyLevel' => $loyaltyLevel
+            ]
+        );
+        $response = $this->client->get($url);
+        return json_decode($response, true);
     }
 }
