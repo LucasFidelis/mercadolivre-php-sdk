@@ -10,6 +10,7 @@ class ProductManager extends Manager
     protected static $FIND_BY_ID_URL = '/items/{itemId}/';
     protected static $FIND_ALL_BY_SELLER_ID = '/users/{sellerId}/items/search';
     protected static $SALE_PRICE = '/items/{itemId}/sale_price?context={channel}.{loyaltyLevel}';
+    protected static $ITEM_URL = '/items/{itemId}/';
 
     public function findById($itemId): Product
     {
@@ -59,5 +60,19 @@ class ProductManager extends Manager
         );
         $response = $this->client->get($url);
         return json_decode($response, true);
+    }
+
+    public function updateVariations(Product $product): Product {
+        $itemId = $product->getId();
+        $url = parent::factoryURL(self::$ITEM_URL, ['itemId' => $itemId]);
+        $body = [
+            'variations' => $product->getVariations()
+        ];
+        $body = json_decode(json_encode($body), true);
+        foreach ($body['variations'] as $variation => $variationData) {
+            unset($body['variations'][$variation]['catalog_product_id']);
+        }
+        $this->client->put($url, [], json_encode($body));
+        return $this->findById($itemId);
     }
 }
