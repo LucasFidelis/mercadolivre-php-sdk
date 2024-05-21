@@ -61,4 +61,11 @@ class ProductManagerTest extends TestCase
         $this->assertIsArray($prices);
         $this->assertIsFloat($prices[0]->getAmount());
     }
+
+    public function testUpdatePrices(): void {
+        $itemId = 'MLB3617049700';
+        $product = $this->sut->findById($itemId);
+        $product = $this->sut->updatePrice($product);
+        $this->assertInstanceOf(Product::class, $product);
+    }
 }
