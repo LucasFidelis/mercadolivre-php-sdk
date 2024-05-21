@@ -36,4 +36,15 @@ class ProductManagerTest extends TestCase
         $salePrice = $this->sut->getSalePrice('MLB3126075382', 'channel_marketplace', 'buyer_loyalty_3');
         $this->assertEquals(388, $salePrice['amount']);
     }
+
+    public function testMustUpdateProductVariations(): void {
+        $product = $this->sut->findById('MLB3126075382');
+        $variations = $product->getVariations();
+        $newAvailableQty = $variations[0]->getAvailableQuantity() + 10;
+        $variations[0]->setAvailableQuantity($newAvailableQty);
+        $product->setVariations($variations);
+        $product = $this->sut->updateVariations($product);
+        $availableQuantity = $product->getVariations()[0]->getAvailableQuantity();
+        $this->assertEquals($availableQuantity, $newAvailableQty);
+    }
 }
