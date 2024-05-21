@@ -80,7 +80,7 @@ class Client
         return $this->httpClient->request($uri, HttpMethod::GET, $headers);
     }
 
-    public function put(string $uri, array $headers = [], string $body): string
+    public function put(string $uri, string $body, array $headers = []): string
     {
         $headers = [
             ...$headers,

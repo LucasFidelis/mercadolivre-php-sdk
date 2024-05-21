@@ -76,7 +76,7 @@ class ProductManager extends Manager
         foreach ($body['variations'] as $variation => $variationData) {
             unset($body['variations'][$variation]['catalog_product_id']);
         }
-        $this->client->put($url, [], json_encode($body));
+        $this->client->put($url, json_encode($body));
         return $this->findById($itemId);
     }
 
@@ -87,7 +87,7 @@ class ProductManager extends Manager
         $body = [
             'available_quantity' => $product->getAvailableQuantity()
         ];
-        $this->client->put($url, [], json_encode($body));
+        $this->client->put($url, json_encode($body));
         return $this->findById($itemId);
     }
 
