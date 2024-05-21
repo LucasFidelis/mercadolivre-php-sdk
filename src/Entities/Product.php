@@ -257,7 +257,7 @@ class Product implements \JsonSerializable
         return $this->basePrice;
     }
 
-    public function getOriginalPrice(): float
+    public function getOriginalPrice(): ?float
     {
         return $this->originalPrice;
     }
@@ -570,13 +570,13 @@ class Product implements \JsonSerializable
         return $this;
     }
 
-    public function setPrice(int $price): self
+    public function setPrice(float $price): self
     {
         $this->price = $price;
         return $this;
     }
 
-    public function setBasePrice(int $basePrice): self
+    public function setBasePrice(float $basePrice): self
     {
         $this->basePrice = $basePrice;
         return $this;
