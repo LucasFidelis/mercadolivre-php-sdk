@@ -89,4 +89,14 @@ class Client
         ];
         return $this->httpClient->request($uri, HttpMethod::PUT, $headers, $body);
     }
+
+    public function post(string $uri, string $body, array $headers = []): string
+    {
+        $headers = [
+            ...$headers,
+            'Accept: */*',
+            'Authorization: Bearer ' . $this->token
+        ];
+        return $this->httpClient->request($uri, HttpMethod::POST, $headers, $body);
+    }
 }
