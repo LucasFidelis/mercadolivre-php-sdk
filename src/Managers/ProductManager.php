@@ -75,4 +75,14 @@ class ProductManager extends Manager
         $this->client->put($url, [], json_encode($body));
         return $this->findById($itemId);
     }
+
+    public function updateAvailableQuantity(Product $product): Product {
+        $itemId = $product->getId();
+        $url = parent::factoryURL(self::$ITEM_URL, ['itemId' => $itemId]);
+        $body = [
+            'available_quantity' => $product->getAvailableQuantity()
+        ];
+        $this->client->put($url, [], json_encode($body));
+        return $this->findById($itemId);
+    }
 }
