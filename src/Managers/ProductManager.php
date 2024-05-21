@@ -2,6 +2,7 @@
 
 namespace LucasFidelis\MercadoLivreSdk\Managers;
 
+use LucasFidelis\MercadoLivreSdk\Entities\Price;
 use LucasFidelis\MercadoLivreSdk\Entities\Product;
 use LucasFidelis\MercadoLivreSdk\Managers\Manager;
 
@@ -11,6 +12,8 @@ class ProductManager extends Manager
     protected static $FIND_ALL_BY_SELLER_ID = '/users/{sellerId}/items/search';
     protected static $SALE_PRICE = '/items/{itemId}/sale_price?context={channel}.{loyaltyLevel}';
     protected static $ITEM_URL = '/items/{itemId}/';
+    protected static $STANDARD_PRICES_URL = '/items/{itemId}/prices/standard';
+    protected static $ITEM_PRICES_URL = '/items/{itemId}/prices';
 
     public function findById($itemId): Product
     {
@@ -62,7 +65,8 @@ class ProductManager extends Manager
         return json_decode($response, true);
     }
 
-    public function updateVariations(Product $product): Product {
+    public function updateVariations(Product $product): Product
+    {
         $itemId = $product->getId();
         $url = parent::factoryURL(self::$ITEM_URL, ['itemId' => $itemId]);
         $body = [
@@ -76,7 +80,8 @@ class ProductManager extends Manager
         return $this->findById($itemId);
     }
 
-    public function updateAvailableQuantity(Product $product): Product {
+    public function updateAvailableQuantity(Product $product): Product
+    {
         $itemId = $product->getId();
         $url = parent::factoryURL(self::$ITEM_URL, ['itemId' => $itemId]);
         $body = [
@@ -84,5 +89,20 @@ class ProductManager extends Manager
         ];
         $this->client->put($url, [], json_encode($body));
         return $this->findById($itemId);
+    }
+
+    /**
+     * @return Price[]
+     */
+    public function getPrices(string $itemId): array
+    {
+        $prices = [];
+        $url = parent::factoryURL(self::$ITEM_PRICES_URL, ['itemId' => $itemId]);
+        $response = $this->client->get($url);
+        $data = json_decode($response, true);
+        foreach ($data['prices'] as $priceData) {
+            $prices[] = Price::fromJson($priceData);
+        }
+        return $prices;
     }
 }
