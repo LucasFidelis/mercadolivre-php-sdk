@@ -21,9 +21,9 @@ class Product implements \JsonSerializable
     public string $categoryId;
     public null $userProductId;
     public null $officialStoreId;
-    public int $price;
-    public int $basePrice;
-    public null $originalPrice;
+    public float $price;
+    public float $basePrice;
+    public ?float $originalPrice;
     public null $inventoryId;
     public string $currencyId;
     public int $initialQuantity;
@@ -98,8 +98,8 @@ class Product implements \JsonSerializable
         string $categoryId,
         null $userProductId,
         null $officialStoreId,
-        int $price,
-        int $basePrice,
+        float $price,
+        float $basePrice,
         null $originalPrice,
         null $inventoryId,
         string $currencyId,
@@ -247,17 +247,17 @@ class Product implements \JsonSerializable
         return $this->officialStoreId;
     }
 
-    public function getPrice(): int
+    public function getPrice(): float
     {
         return $this->price;
     }
 
-    public function getBasePrice(): int
+    public function getBasePrice(): float
     {
         return $this->basePrice;
     }
 
-    public function getOriginalPrice(): null
+    public function getOriginalPrice(): float
     {
         return $this->originalPrice;
     }
@@ -582,7 +582,7 @@ class Product implements \JsonSerializable
         return $this;
     }
 
-    public function setOriginalPrice(null $originalPrice): self
+    public function setOriginalPrice(float $originalPrice): self
     {
         $this->originalPrice = $originalPrice;
         return $this;
