@@ -5,6 +5,23 @@
 </p>
 <h1 align="center">Mercado Livre SDK PHP</h1>
 
+## How to use
+```php
+use LucasFidelis\MercadoLivreSdk\Client\Client;
+use LucasFidelis\MercadoLivreSdk\Managers\ProductManager;
+
+...
+
+$itemId = 'MLB123456789';
+
+$client = new Client($CLIENT_ID, $CLIENT_SECRET, $ACCESS_TOKEN, $REFRESH_TOKEN);
+$productManager = new ProductManager($client);
+
+$product = $productManager->findById($itemId);
+$product->setPrice(123.45);
+$productManager->updatePrice($product);
+```
+
 ## Contribute
 
 Feel free to open pull requests; we welcome contributions! However, for significant changes, it's best to open an issue beforehand. Before creating your own issue or pull request, always check to see if one already exists!
