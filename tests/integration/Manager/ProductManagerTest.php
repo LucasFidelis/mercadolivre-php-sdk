@@ -31,4 +31,9 @@ class ProductManagerTest extends TestCase
         $this->assertNotTrue(empty($products));
         $this->assertNotTrue(empty($products[0]));
     }
+
+    public function testMustGetSalePrice(): void {
+        $salePrice = $this->sut->getSalePrice('MLB3126075382', 'channel_marketplace', 'buyer_loyalty_3');
+        $this->assertEquals(388, $salePrice['amount']);
+    }
 }
