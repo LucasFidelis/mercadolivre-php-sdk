@@ -18,6 +18,7 @@ class ProductManager extends Manager
     public function findById($itemId): Product
     {
         $url = parent::factoryURL(self::$FIND_BY_ID_URL, ['itemId' => $itemId]);
+        $url .= "?include_attributes=all"; 
         $response = $this->client->get($url);
         $data = json_decode($response, true);
         return Product::fromJson($data);
