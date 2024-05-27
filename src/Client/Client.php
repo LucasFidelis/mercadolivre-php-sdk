@@ -52,6 +52,29 @@ class Client
         return $response;
     }
 
+    public function refresh(): string 
+    {
+        $body = [
+            'grant_type' => 'refresh_token',
+            'client_id' => $this->clientId,
+            'client_secret' => $this->clientSecret,
+            'refresh_token' => $this->refresh_token
+        ];
+        $body = http_build_query($body);
+        $headers = [
+            'accept' => 'application/json',
+            'content-type' => 'application/x-www-form-urlencoded'
+        ];
+        $url = self::$API_URL . self::$OAUTH_URL;
+        $response = $this->httpClient->request($url, HttpMethod::POST, $headers, $body);
+        
+        $data = json_decode($response, true);
+        $this->token = $data['access_token'];
+        $this->refresh_token = $data['refresh_token'];
+        
+        return $response;
+    }
+
     public function getMe(): User
     {
         $url = self::$API_URL . self::$USERS_ME_URL;
