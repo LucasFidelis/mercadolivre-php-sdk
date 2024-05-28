@@ -12,7 +12,7 @@ class Client
     protected static $API_URL = 'https://api.mercadolibre.com';
     protected static $OAUTH_URL = '/oauth/token';
     protected static $USERS_ME_URL = '/users/me';
-    protected static $TEST_USER_URL = 'users/test_user';
+    protected static $TEST_USER_URL = '/users/test_user';
 
     private string $redirect_uri;
     private HttpClientInterface $httpClient;
