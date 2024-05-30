@@ -109,7 +109,7 @@ abstract class DataObject implements \JsonSerializable
                 if ($expectedType == 'numeric' && is_numeric($value)) 
                     $currentType = 'numeric';
                 if ($expectedType != $currentType)
-                    throw new Exception("Invalid type $key::$expectedType");
+                    throw new Exception("Invalid type: $key expects $expectedType, $currentType given.");
             }
             $this->_data[$key] = $value;
         }

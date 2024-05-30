@@ -37,7 +37,7 @@ class ProductTest extends TestCase
 
     public function testThrowsAnExceptionWhenTypeIsInvalid(): void
     {
-        $this->expectExceptionMessage('Invalid type title::string');
+        $this->expectExceptionMessage('Invalid type: title expects string, boolean given.');
         $product = new Product();
         $product->setTitle(false);
     }
