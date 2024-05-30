@@ -85,7 +85,7 @@ class Client
         ];
         $response = $this->httpClient->request($url, HttpMethod::GET, $headers);
         $data = json_decode($response, true);
-        $user = User::fromJson($data);
+        $user = new User($data);
         return $user;
     }
 
