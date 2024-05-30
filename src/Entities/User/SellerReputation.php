@@ -7,7 +7,7 @@ use LucasFidelis\MercadoLivreSdk\Entities\User\SellerReputation\Transactions;
 class SellerReputation
 {
 	private string $levelId;
-	private string $powerSellerStatus;
+	private ?string $powerSellerStatus;
 	private string $realLevel;
 	private string $protectionEndDate;
 	private Transactions $transactions;
@@ -18,7 +18,7 @@ class SellerReputation
 		return $this->levelId;
 	}
 
-	public function getPowerSellerStatus(): string
+	public function getPowerSellerStatus(): ?string
 	{
 		return $this->powerSellerStatus;
 	}
@@ -49,7 +49,7 @@ class SellerReputation
 		return $this;
 	}
 
-	public function setPowerSellerStatus(string $powerSellerStatus): self
+	public function setPowerSellerStatus(?string $powerSellerStatus): self
 	{
 		$this->powerSellerStatus = $powerSellerStatus;
 		return $this;
@@ -83,9 +83,9 @@ class SellerReputation
 	{
 		$instance = new self();
 		$instance->setLevelId($data['level_id']);
-		$instance->setPowerSellerStatus($data['power_seller_status']);
-		$instance->setRealLevel($data['real_level']);
-		$instance->setProtectionEndDate($data['protection_end_date']);
+		// $instance->setPowerSellerStatus($data['power_seller_status']);
+		// $instance->setRealLevel($data['real_level']);
+		// $instance->setProtectionEndDate($data['protection_end_date']);
 		$instance->setTransactions(Transactions::fromJson($data['transactions']));
 		$instance->setMetrics(Metrics::fromJson($data['metrics']));
 		return $instance;

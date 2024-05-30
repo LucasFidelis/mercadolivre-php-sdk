@@ -5,16 +5,15 @@ namespace LucasFidelis\MercadoLivreSdk\Entities\User;
 class Claims
 {
 	private string $period;
-	private int $rate;
+	private float $rate;
 	private int $value;
-	private Excluded $excluded;
 
 	public function getPeriod(): string
 	{
 		return $this->period;
 	}
 
-	public function getRate(): int
+	public function getRate(): float
 	{
 		return $this->rate;
 	}
@@ -35,7 +34,7 @@ class Claims
 		return $this;
 	}
 
-	public function setRate(int $rate): self
+	public function setRate(float $rate): self
 	{
 		$this->rate = $rate;
 		return $this;
@@ -59,7 +58,6 @@ class Claims
 		$instance->setPeriod($data['period']);
 		$instance->setRate($data['rate']);
 		$instance->setValue($data['value']);
-		$instance->setExcluded(Excluded::fromJson($data['excluded']));
 		return $instance;
 	}
 }
