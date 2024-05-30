@@ -21,7 +21,7 @@ class ProductManager extends Manager
         $url .= "?include_attributes=all"; 
         $response = $this->client->get($url);
         $data = json_decode($response, true);
-        return Product::fromJson($data);
+        return new Product($data);
     }
 
     /**
