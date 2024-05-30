@@ -33,12 +33,14 @@ class ProductManagerTest extends TestCase
         $this->assertNotTrue(empty($products[0]));
     }
 
-    public function testMustGetSalePrice(): void {
+    public function testMustGetSalePrice(): void
+    {
         $salePrice = $this->sut->getSalePrice('MLB3126075382', 'channel_marketplace', 'buyer_loyalty_3');
         $this->assertEquals(388, $salePrice['amount']);
     }
 
-    public function testMustUpdateProductVariations(): void {
+    public function testMustUpdateProductVariations(): void
+    {
         $product = $this->sut->findById('MLB3126075382');
         $variations = $product->getVariations();
         $newAvailableQty = $variations[0]->getAvailableQuantity();
@@ -49,20 +51,23 @@ class ProductManagerTest extends TestCase
         $this->assertEquals($availableQuantity, $newAvailableQty);
     }
 
-    public function testMustUpdateAvailableQuantity(): void {
+    public function testMustUpdateAvailableQuantity(): void
+    {
         $product = $this->sut->findById('MLB3617049700');
         $qty = $product->getAvailableQuantity();
         $product = $this->sut->updateAvailableQuantity($product);
         $this->assertEquals($product->getAvailableQuantity(), $qty);
     }
 
-    public function testMustGetPrices(): void {
+    public function testMustGetPrices(): void
+    {
         $prices = $this->sut->getPrices('MLB3617049700');
         $this->assertIsArray($prices);
         $this->assertIsFloat($prices[0]->getAmount());
     }
 
-    public function testUpdatePrices(): void {
+    public function testUpdatePrices(): void
+    {
         $itemId = 'MLB3617049700';
         $product = $this->sut->findById($itemId);
         $product = $this->sut->updatePrice($product);
