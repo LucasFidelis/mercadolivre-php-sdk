@@ -22,6 +22,28 @@ $product->setPrice(123.45);
 $productManager->updatePrice($product);
 ```
 
+## Supported features
+
+### Authentication and Authorization
+| Feature | Status |
+|----------|--------|
+| Authorization | ✅ |
+| Refresh token | ✅ |
+| Create a test user | ✅ |
+| Get Profile | ✅ |
+
+### Products
+| Feature | Status |
+|----------|--------|
+| Get Item by ID | ✅ |
+| Search items by Seller ID | ✅ |
+| Get current sales price | ✅ |
+| Change variations | ✅ |
+| Update Available Quantity | ✅ |
+| Get Item Prices | ✅ |
+| Update Price | ✅ |
+| Create an Item | 🔜 |
+
 ## Contribute
 
 Feel free to open pull requests; we welcome contributions! However, for significant changes, it's best to open an issue beforehand. Before creating your own issue or pull request, always check to see if one already exists!
