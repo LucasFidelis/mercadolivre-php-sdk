@@ -2,6 +2,9 @@
 
 use LucasFidelis\MercadoLivreSdk\Client\Client;
 use LucasFidelis\MercadoLivreSdk\Entities\Product;
+use LucasFidelis\MercadoLivreSdk\Entities\Product\Attribute;
+use LucasFidelis\MercadoLivreSdk\Entities\Product\Picture;
+use LucasFidelis\MercadoLivreSdk\Entities\Product\SaleTerm;
 use LucasFidelis\MercadoLivreSdk\Managers\ProductManager;
 use PHPUnit\Framework\TestCase;
 
@@ -71,6 +74,41 @@ class ProductManagerTest extends TestCase
         $itemId = 'MLB3617049700';
         $product = $this->sut->findById($itemId);
         $product = $this->sut->updatePrice($product);
+        $this->assertInstanceOf(Product::class, $product);
+    }
+
+    public function testCreateProduct(): void
+    {
+        $saleTerms = [
+            new SaleTerm([
+                'id' => 'WARRANTY_TYPE',
+                'value_name' => 'Garantia do vendedor'
+            ]),
+            new SaleTerm([
+                'id' => 'WARRANTY_TIME',
+                'value_name' => '90 dias'
+            ]),
+        ];
+        $pictures = [
+            new Picture(['url' => 'https://http2.mlstatic.com/D_NQ_NP_2X_873747-MLU76453519258_052024-F.png'])
+        ];
+        $attributes = [
+            new Attribute(['id' => 'BRAND', 'value_name' => 'Marca do produto']),
+            new Attribute(['id' => 'EAN', 'value_name' => '7898095297749'])
+        ];
+        $product = new Product();
+        $product->setTitle('Item de test - No Ofertar');
+        $product->setCategoryId('MLB3530');
+        $product->setPrice(350);
+        $product->setCurrencyId('BRL');
+        $product->setAvailableQuantity(10);
+        $product->setBuyingMode('buy_it_now');
+        $product->setCondition('new');
+        $product->setListingTypeId('gold_special');
+        $product->setSaleTerms($saleTerms);
+        $product->setPictures($pictures);
+        $product->setAttributes($attributes);
+        $product = $this->sut->createProduct($product);
         $this->assertInstanceOf(Product::class, $product);
     }
 }
