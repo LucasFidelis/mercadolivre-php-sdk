@@ -4,6 +4,7 @@ namespace LucasFidelis\MercadoLivreSdk\Managers;
 
 use LucasFidelis\MercadoLivreSdk\Entities\Price;
 use LucasFidelis\MercadoLivreSdk\Entities\Product;
+use LucasFidelis\MercadoLivreSdk\Entities\Product\Picture;
 use LucasFidelis\MercadoLivreSdk\Managers\Manager;
 
 class ProductManager extends Manager
@@ -14,6 +15,7 @@ class ProductManager extends Manager
     protected static $ITEM_URL = '/items/{itemId}/';
     protected static $STANDARD_PRICES_URL = '/items/{itemId}/prices/standard';
     protected static $ITEM_PRICES_URL = '/items/{itemId}/prices';
+    protected static $CREATE_ITEM_URL = '/items';
 
     public function findById($itemId): Product
     {
@@ -116,6 +118,20 @@ class ProductManager extends Manager
         ];
         $body = json_encode($body);
         $this->client->put($url, $body);
+        return $this->findById($itemId);
+    }
+
+    public function createProduct(Product $product): Product
+    {
+        $url = parent::factoryURL(self::$CREATE_ITEM_URL, []);
+        $body = json_decode(json_encode($product), true);
+        $body['pictures'] = array_map(static function (Picture $picture) {
+            return ['source' => $picture->getUrl() ];
+        }, $product->getPictures());
+        $body = json_encode($body);
+        $response = $this->client->post($url, $body);
+        $data = json_decode($response, true);
+        $itemId = $data['id'];
         return $this->findById($itemId);
     }
 }
