@@ -79,7 +79,7 @@ abstract class DataObject implements \JsonSerializable
     {
         if (isset($this->_data[$key])) {
             if (isset($this->collections[$key])) {
-                return $this->initializeCollection($this->collections[$key], $this->_data[$key]);
+                $this->_data[$key] = $this->initializeCollection($this->collections[$key], $this->_data[$key]);
             }
             return $this->_data[$key];
         }
