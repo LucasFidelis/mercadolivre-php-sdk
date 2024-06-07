@@ -3,6 +3,7 @@
 namespace LucasFidelis\MercadoLivreSdk\Entities\Product;
 
 use LucasFidelis\MercadoLivreSdk\Entities\DataObject;
+use LucasFidelis\MercadoLivreSdk\Entities\Product\Variation\AttributeCombination;
 
 class Variation extends DataObject
 {
@@ -13,5 +14,9 @@ class Variation extends DataObject
         'sold_quantity' => 'string',
         'seller_custom_field' => 'string',
         'catalog_product_id' => 'string'
+    ];
+
+    protected array $collections = [
+        'attribute_combinations' => AttributeCombination::class
     ];
 }
