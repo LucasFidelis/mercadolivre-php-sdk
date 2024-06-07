@@ -22,6 +22,10 @@ $product->setPrice(123.45);
 $productManager->updatePrice($product);
 ```
 
+## How to install
+
+    composer require lucasfidelis/mercado-livre-sdk
+
 ## Supported features
 
 ### Authentication and Authorization
