@@ -1,19 +1,21 @@
 {
-    "name": "lucasfidelis/mercadolivresdk",
+    "name": "lucasfidelis/mercado-livre-sdk",
+    "type": "library",
     "description": "MercadoLivre SDK",
-    "version": "0.0.1",
-    "license": "proprietary",
+    "license": "MIT",
     "authors": [
         {
             "name": "Lucas Fidélis",
             "email": "lucasfidelis97@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
             "LucasFidelis\\MercadoLivreSdk\\": "src/"
         }
+    },
+    "require": {
+        "php": ">=8.2"
     },
     "require-dev": {
         "phpunit/phpunit": "^11"
