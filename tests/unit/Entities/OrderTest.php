@@ -1,6 +1,7 @@
 <?php
 
 use LucasFidelis\MercadoLivreSdk\Entities\Order;
+use LucasFidelis\MercadoLivreSdk\Entities\Order\Coupon;
 use PHPUnit\Framework\TestCase;
 
 class OrderTest extends TestCase
@@ -16,5 +17,12 @@ class OrderTest extends TestCase
         $mockData = $this->getMockData('2000008464929496.json');
         $order = new Order($mockData);
         $this->assertInstanceOf(Order::class, $order );
+    }
+
+    public function testGetCoupon(): void
+    {
+        $mockData = $this->getMockData('2000008464929496.json');
+        $order = new Order($mockData);
+        $this->assertInstanceOf(Coupon::class, $order->getCoupon());
     }
 }
