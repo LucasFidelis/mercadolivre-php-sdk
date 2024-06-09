@@ -81,6 +81,15 @@ abstract class DataObject implements \JsonSerializable
             if (isset($this->collections[$key])) {
                 $this->_data[$key] = $this->initializeCollection($this->collections[$key], $this->_data[$key]);
             }
+            if (array_key_exists($key, $this->getSchema())) {
+                $expectedType = $this->getSchema()[$key];
+                $classExists = class_exists($expectedType);
+                if ($classExists) {
+                    if (!$this->_data[$key] instanceof $expectedType) {
+                        $this->_data[$key] = new $expectedType($this->_data[$key]);
+                    }
+                }
+            }
             return $this->_data[$key];
         }
         return null;
