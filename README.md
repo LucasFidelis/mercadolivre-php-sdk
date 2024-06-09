@@ -48,6 +48,11 @@ $productManager->updatePrice($product);
 | Update Price | ✅ |
 | Create an Item | 🔜 |
 
+### Orders
+| Feature | Status |
+|----------|--------|
+| Get Order by ID | ✅ |
+
 ## Contribute
 
 Feel free to open pull requests; we welcome contributions! However, for significant changes, it's best to open an issue beforehand. Before creating your own issue or pull request, always check to see if one already exists!
