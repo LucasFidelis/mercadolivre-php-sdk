@@ -1,0 +1,161 @@
+{
+    "id": 2000008464929496,
+    "date_created": "2024-06-07T08:31:16.000-04:00",
+    "last_updated": "2024-06-07T16:27:41.000-04:00",
+    "expiration_date": "2024-07-05T16:07:54.000-04:00",
+    "date_closed": "2024-06-07T16:07:54.000-04:00",
+    "comment": null,
+    "pack_id": null,
+    "pickup_id": null,
+    "fulfilled": null,
+    "hidden_for_seller": null,
+    "buying_mode": "buy_equals_pay",
+    "shipping_cost": null,
+    "application_id": null,
+    "mediations": [],
+    "total_amount": 90.00,
+    "paid_amount": 90.00,
+    "coupon": {
+        "amount": 0.00,
+        "id": null
+    },
+    "order_items": [
+        {
+            "item": {
+                "id": "MLB3492786623",
+                "title": "Central Dz Fit Ramp V2.2 Dk1203 Frequência 50/60hz Tamanho Da Engrenagem N/a 127/220",
+                "category_id": "MLB33447",
+                "variation_id": null,
+                "seller_custom_field": null,
+                "variation_attributes": [],
+                "warranty": "Garantia de fábrica: 12 meses",
+                "condition": "new",
+                "seller_sku": "019522",
+                "global_price": null,
+                "net_weight": null,
+                "user_product_id": null
+            },
+            "quantity": 1,
+            "requested_quantity": {
+                "value": 1,
+                "measure": "unit"
+            },
+            "picked_quantity": null,
+            "unit_price": 90.00,
+            "full_unit_price": 90.00,
+            "currency_id": "BRL",
+            "manufacturing_days": null,
+            "sale_fee": 14.85,
+            "listing_type_id": "gold_pro",
+            "base_exchange_rate": null,
+            "base_currency_id": null,
+            "element_id": null,
+            "discounts": null,
+            "bundle": null,
+            "compat_id": null
+        }
+    ],
+    "currency_id": "BRL",
+    "payments": [
+        {
+            "id": 80006202992,
+            "order_id": 2000008464929496,
+            "payer_id": 85937594,
+            "collector": {
+                "id": 339836955
+            },
+            "card_id": null,
+            "reason": "Central Dz Fit Ramp V2.2 Dk1203 Frequência 50/60hz Tamanho Da Engrenagem N/a 127/220",
+            "site_id": "MLB",
+            "payment_method_id": "bolbradesco",
+            "currency_id": "BRL",
+            "installments": 1,
+            "issuer_id": "2006",
+            "atm_transfer_reference": {
+                "transaction_id": "10366211564",
+                "company_id": "safra"
+            },
+            "coupon_id": null,
+            "activation_uri": "https://www.mercadolivre.com.br/payments/80006202992/ticket?caller_id=85937594&payment_method_id=bolbradesco&payment_id=812346202992&payment_method_reference_id=10342211564&hash=c68ff943-7c62-4b6b-8f92-eaa87d5e17f5",
+            "operation_type": "regular_payment",
+            "payment_type": "ticket",
+            "available_actions": [
+                "refund"
+            ],
+            "status": "approved",
+            "status_code": null,
+            "status_detail": "accredited",
+            "transaction_amount": 90.00,
+            "transaction_amount_refunded": 0.00,
+            "taxes_amount": 0.00,
+            "shipping_cost": 0.00,
+            "coupon_amount": 0.00,
+            "overpaid_amount": 0.00,
+            "total_paid_amount": 90.00,
+            "installment_amount": null,
+            "deferred_period": null,
+            "date_approved": "2024-06-07T16:06:53.000-04:00",
+            "transaction_order_id": null,
+            "date_created": "2024-06-07T08:31:16.000-04:00",
+            "date_last_modified": "2024-06-07T16:07:59.000-04:00",
+            "marketplace_fee": 14.85,
+            "reference_id": null,
+            "authorization_code": null
+        }
+    ],
+    "shipping": {
+        "id": 43474637041
+    },
+    "status": "paid",
+    "status_detail": null,
+    "tags": [
+        "catalog",
+        "paid",
+        "not_delivered"
+    ],
+    "internal_tags": [],
+    "feedback": {
+        "seller": null,
+        "buyer": null
+    },
+    "context": {
+        "channel": "marketplace",
+        "site": "MLB",
+        "flows": [
+            "catalog"
+        ],
+        "application": null,
+        "product_id": null,
+        "store_id": null
+    },
+    "seller": {
+        "id": 339836955,
+        "user_type": null,
+        "tags": [],
+        "internal_tags": [],
+        "status": null,
+        "buy_restrictions": []
+    },
+    "buyer": {
+        "id": 85937594,
+        "nickname": "JOHNDOE",
+        "first_name": "John",
+        "last_name": "Doe",
+        "user_type": null,
+        "tags": [],
+        "internal_tags": [],
+        "status": null,
+        "buy_restrictions": []
+    },
+    "taxes": {
+        "amount": null,
+        "currency_id": null,
+        "id": null
+    },
+    "cancel_detail": null,
+    "manufacturing_ending_date": null,
+    "order_request": {
+        "change": null,
+        "return": null
+    }
+}
