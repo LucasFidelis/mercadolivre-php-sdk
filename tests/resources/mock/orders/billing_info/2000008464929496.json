@@ -1,0 +1,56 @@
+{
+    "billing_info": {
+        "additional_info": [
+            {
+                "type": "DOC_NUMBER",
+                "value": "12345678901"
+            },
+            {
+                "type": "LAST_NAME",
+                "value": "Doe"
+            },
+            {
+                "type": "DOC_TYPE",
+                "value": "CPF"
+            },
+            {
+                "type": "STREET_NAME",
+                "value": "Main Street"
+            },
+            {
+                "type": "ZIP_CODE",
+                "value": "12340000"
+            },
+            {
+                "type": "CITY_NAME",
+                "value": "Salvador"
+            },
+            {
+                "type": "STATE_NAME",
+                "value": "Bahia"
+            },
+            {
+                "type": "SITE_ID",
+                "value": "MLB"
+            },
+            {
+                "type": "STREET_NUMBER",
+                "value": "123"
+            },
+            {
+                "type": "NEIGHBORHOOD",
+                "value": "Neighborhood"
+            },
+            {
+                "type": "FIRST_NAME",
+                "value": "John"
+            },
+            {
+                "type": "COUNTRY_ID",
+                "value": "BR"
+            }
+        ],
+        "doc_number": "12345678901",
+        "doc_type": "CPF"
+    }
+}

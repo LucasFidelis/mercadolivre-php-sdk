@@ -1,6 +1,7 @@
 <?php
 
 use LucasFidelis\MercadoLivreSdk\Client\Client;
+use LucasFidelis\MercadoLivreSdk\Entities\BillingInfo;
 use LucasFidelis\MercadoLivreSdk\Managers\OrderManager;
 use LucasFidelis\MercadoLivreSdk\Entities\Order;
 use PHPUnit\Framework\TestCase;
@@ -32,5 +33,15 @@ class OrderManagerTest extends TestCase
         $order =  $this->sut->getOrderById('2000008464929496');
         $this->assertInstanceOf(Order::class, $order);
         $this->assertEquals(90, $order->getTotalAmount());
+    }
+
+    public function testMustGetBillingInfo(): void
+    {
+        $this->clientStub->method('get')
+            ->willReturn($this->getMockData('billing_info/2000008464929496.json'));
+        $billingInfo =  $this->sut->getBillingInfo('2000008464929496');
+        $this->assertInstanceOf(BillingInfo::class, $billingInfo);
+        $this->assertIsArray($billingInfo->getAdditionalInfo());
+        $this->assertGreaterThan(2, count($billingInfo->getAdditionalInfo()));
     }
 }
