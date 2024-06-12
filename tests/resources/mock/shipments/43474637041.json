@@ -1,0 +1,232 @@
+{
+    "substatus_history": [
+        {
+            "date": "2024-06-07T16:07:56.000-04:00",
+            "substatus": "invoice_pending",
+            "status": "ready_to_ship"
+        }
+    ],
+    "snapshot_packing": {
+        "snapshot_id": "a2bd39a1-d7d9-451f-85ee-d2f99b581fec",
+        "pack_hash": "1"
+    },
+    "receiver_id": 85962593,
+    "base_cost": 30.4,
+    "status_history": {
+        "date_shipped": null,
+        "date_returned": null,
+        "date_delivered": null,
+        "date_first_visit": null,
+        "date_not_delivered": null,
+        "date_cancelled": null,
+        "date_handling": "2024-06-07T16:07:56.000-04:00",
+        "date_ready_to_ship": "2024-06-07T16:07:56.000-04:00"
+    },
+    "type": "forward",
+    "return_details": null,
+    "sender_id": 339836955,
+    "mode": "me2",
+    "order_cost": 90,
+    "priority_class": {
+        "id": "20"
+    },
+    "service_id": 157861,
+    "shipping_items": [
+        {
+            "domain_id": null,
+            "quantity": 1,
+            "dimensions_source": {
+                "origin": "dimensions_sorter_conciliation",
+                "id": "MLB3492786623__1"
+            },
+            "description": "Central Dz Fit Ramp V2.2 Dk1203 Frequência 50/60hz Tamanho Da Engrenagem N/a 127/220",
+            "id": "MLB3492786623",
+            "user_product_id": null,
+            "sender_id": 339836955,
+            "dimensions": "9.0x17.0x19.0,300.0"
+        }
+    ],
+    "tracking_number": null,
+    "cost_components": {
+        "loyal_discount": 0,
+        "special_discount": 0,
+        "compensation": 0,
+        "gap_discount": 0,
+        "ratio": 50.85
+    },
+    "id": 43474637041,
+    "tracking_method": "MEL Distribution",
+    "last_updated": "2024-06-07T16:14:28.096-04:00",
+    "items_types": [
+        "new"
+    ],
+    "comments": null,
+    "substatus": "invoice_pending",
+    "date_created": "2024-06-07T08:31:16.453-04:00",
+    "date_first_printed": null,
+    "created_by": "receiver",
+    "application_id": null,
+    "shipping_option": {
+        "processing_time": null,
+        "cost": 0,
+        "estimated_schedule_limit": {
+            "date": null
+        },
+        "shipping_method_id": 100009,
+        "estimated_delivery_final": {
+            "date": "2024-06-13T00:00:00.000-03:00",
+            "offset": 720
+        },
+        "buffering": {
+            "date": null
+        },
+        "pickup_promise": {
+            "from": null,
+            "to": null
+        },
+        "list_cost": 20.45,
+        "estimated_delivery_limit": {
+            "date": "2024-06-13T00:00:00.000-03:00",
+            "offset": 480
+        },
+        "priority_class": {
+            "id": "20"
+        },
+        "delivery_promise": "estimated",
+        "delivery_type": "estimated",
+        "estimated_handling_limit": {
+            "date": "2024-06-10T00:00:00.000-03:00"
+        },
+        "estimated_delivery_time": {
+            "date": "2024-06-13T00:00:00.000-03:00",
+            "pay_before": "2024-06-08T05:01:00.000-03:00",
+            "schedule": null,
+            "unit": "hour",
+            "offset": {
+                "date": "2024-06-14T00:00:00.000-03:00",
+                "shipping": 24
+            },
+            "shipping": 72,
+            "time_frame": {
+                "from": null,
+                "to": null
+            },
+            "handling": 24,
+            "type": "known_frame"
+        },
+        "name": "Normal",
+        "id": 4185859284,
+        "estimated_delivery_extended": {
+            "date": "2024-06-13T00:00:00.000-03:00",
+            "offset": 480
+        },
+        "currency_id": "BRL"
+    },
+    "tags": [],
+    "sender_address": {
+        "country": {
+            "id": "BR",
+            "name": "Brasil"
+        },
+        "address_line": "XXXXXXX",
+        "types": [
+            "billing",
+            "default_buying_address",
+            "default_return_address",
+            "default_selling_address",
+            "shipping"
+        ],
+        "scoring": 4.38,
+        "agency": null,
+        "city": {
+            "id": "TUxCQ1ZBUmJjNjk1",
+            "name": "Varginha"
+        },
+        "geolocation_type": "ROOFTOP",
+        "latitude": 0,
+        "municipality": {
+            "id": null,
+            "name": null
+        },
+        "location_id": 2018462,
+        "street_name": "XXXXXXX",
+        "zip_code": "XXXXXXX",
+        "geolocation_source": "geolocation-feedback",
+        "node": null,
+        "intersection": null,
+        "street_number": "XXXXXXX",
+        "comment": "XXXXXXX",
+        "id": 1138630063,
+        "state": {
+            "id": "BR-MG",
+            "name": "Minas Gerais"
+        },
+        "neighborhood": {
+            "id": null,
+            "name": "Rezende"
+        },
+        "geolocation_last_updated": "2023-12-12T12:41:12.617Z",
+        "longitude": 0
+    },
+    "sibling": {
+        "reason": null,
+        "sibling_id": null,
+        "description": null,
+        "source": null,
+        "date_created": null,
+        "last_updated": null
+    },
+    "return_tracking_number": null,
+    "site_id": "MLB",
+    "carrier_info": null,
+    "market_place": "MELI",
+    "receiver_address": {
+        "country": {
+            "id": "BR",
+            "name": "Brasil"
+        },
+        "city": {
+            "id": "TUxCQ0RJQWJhNGY",
+            "name": "Salvador"
+        },
+        "geolocation_type": "ROOFTOP",
+        "latitude": -12.610487,
+        "municipality": {
+            "id": null,
+            "name": null
+        },
+        "location_id": 9124037,
+        "street_name": "Main Street",
+        "zip_code": "42850000",
+        "intersection": null,
+        "receiver_name": "John Doe",
+        "id": 1260843190,
+        "state": {
+            "id": "BR-BA",
+            "name": "Bahia"
+        },
+        "longitude": -38.315215,
+        "address_line": "Main Street 123",
+        "types": [
+            "default_buying_address"
+        ],
+        "scoring": 4.3,
+        "agency": null,
+        "geolocation_source": "geolocation-feedback",
+        "delivery_preference": "residential",
+        "node": null,
+        "street_number": "123",
+        "comment": "Main Street",
+        "neighborhood": {
+            "id": null,
+            "name": "Neighborhood"
+        },
+        "geolocation_last_updated": "2023-12-14T16:37:55.99Z",
+        "receiver_phone": "XXXXXXX"
+    },
+    "customer_id": null,
+    "order_id": 2000008464929496,
+    "quotation": null,
+    "status": "ready_to_ship",
+    "logistic_type": "cross_docking"
+}
