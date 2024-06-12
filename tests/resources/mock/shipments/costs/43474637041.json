@@ -1,0 +1,37 @@
+{
+    "receiver": {
+        "compensations": [],
+        "cost": 0,
+        "discounts": [
+            {
+                "rate": 1,
+                "type": "ratio",
+                "promoted_amount": 30.4
+            }
+        ],
+        "user_id": 123456789,
+        "cost_details": [],
+        "save": 0,
+        "compensation": 0
+    },
+    "gross_amount": 71.3,
+    "senders": [
+        {
+            "compensations": [],
+            "charges": {
+                "charge_flex": 0
+            },
+            "cost": 20.45,
+            "discounts": [
+                {
+                    "rate": 0.5,
+                    "type": "mandatory",
+                    "promoted_amount": 20.45
+                }
+            ],
+            "user_id": 339836955,
+            "save": 20.45,
+            "compensation": 0
+        }
+    ]
+}

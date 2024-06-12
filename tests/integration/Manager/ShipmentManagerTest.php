@@ -2,6 +2,7 @@
 
 use LucasFidelis\MercadoLivreSdk\Client\Client;
 use LucasFidelis\MercadoLivreSdk\Entities\Shipment;
+use LucasFidelis\MercadoLivreSdk\Entities\ShipmentCosts;
 use LucasFidelis\MercadoLivreSdk\Managers\ShipmentManager;
 use PHPUnit\Framework\TestCase;
 
@@ -32,5 +33,16 @@ class ShipmentManagerTest extends TestCase
         $shipment =  $this->sut->getShipmentById(43474637041);
         $this->assertInstanceOf(Shipment::class, $shipment);
         $this->assertEquals('ready_to_ship', $shipment->getStatus());
+    }
+
+    public function testMustGetShipmentCosts(): void
+    {
+        $this->clientStub->method('get')
+            ->willReturn($this->getMockData('costs/43474637041.json'));
+        $shipmentCosts =  $this->sut->getShipmentCosts(43474637041);
+        $this->assertInstanceOf(ShipmentCosts::class, $shipmentCosts);
+        $this->assertEquals(71.3, $shipmentCosts->getGrossAmount());
+        $this->assertEquals(20.45, $shipmentCosts->getSenders()[0]->getCost());
+        $this->assertEquals(0, $shipmentCosts->getReceiver()->getCost());
     }
 }
