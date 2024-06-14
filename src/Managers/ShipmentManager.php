@@ -4,12 +4,14 @@ namespace LucasFidelis\MercadoLivreSdk\Managers;
 
 use LucasFidelis\MercadoLivreSdk\Entities\Shipment;
 use LucasFidelis\MercadoLivreSdk\Entities\ShipmentCosts;
+use LucasFidelis\MercadoLivreSdk\Entities\ShipmentItem;
 use LucasFidelis\MercadoLivreSdk\Managers\Manager;
 
 class ShipmentManager extends Manager
 {
     protected static $GET_SHIPMENT_BY_ID_URL = '/shipments/{shipmentId}';
     protected static $GET_SHIPMENT_COSTS = '/shipments/{shipmentId}/costs';
+    protected static $GET_SHIPMENT_ITEMS = '/shipments/{shipmentId}/items';
 
     public function getShipmentById(int $shipmentId): Shipment
     {
@@ -25,5 +27,18 @@ class ShipmentManager extends Manager
         $response = $this->client->get($url);
         $data = json_decode($response, true);
         return new ShipmentCosts($data);
+    }
+
+    /**
+     * @return ShipmentItem[]
+     */
+    public function getShipmentItems(int $shipmentId): array
+    {
+        $url = parent::factoryURL(self::$GET_SHIPMENT_ITEMS, ['shipmentId', $shipmentId]);
+        $response = $this->client->get($url);
+        $data = json_decode($response, true);
+        return array_map(static function ($shipmentItemData) {
+            return new ShipmentItem($shipmentItemData);
+        }, $data);
     }
 }
