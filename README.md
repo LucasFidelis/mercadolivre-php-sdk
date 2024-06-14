@@ -52,6 +52,14 @@ $productManager->updatePrice($product);
 | Feature | Status |
 |----------|--------|
 | Get Order by ID | ✅ |
+| Get Billing Info | ✅ |
+
+### Shipment
+| Feature | Status |
+|----------|--------|
+| Get Shipment by ID | ✅ |
+| Get Shipment Costs | ✅ |
+| Get Shipment Items | ✅ |
 
 ## Contribute
 
