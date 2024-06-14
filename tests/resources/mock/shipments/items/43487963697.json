@@ -1,0 +1,44 @@
+[
+    {
+        "manufacturing_time": null,
+        "domain_id": null,
+        "quantity": 4,
+        "item_id": "MLB2054122397",
+        "variation_id": null,
+        "dimensions_source": {
+            "origin": "similarity",
+            "id": "MLB2054122397__1"
+        },
+        "description": "Patch Cord Singlemode 2sc-2lc 1,5m Nexans Azul",
+        "order_id": "2000008496008228",
+        "user_product_id": null,
+        "sender_id": 339836955,
+        "dimensions": {
+            "width": 17,
+            "length": 21,
+            "weight": 200,
+            "height": 3
+        }
+    },
+    {
+        "manufacturing_time": null,
+        "domain_id": null,
+        "quantity": 5,
+        "item_id": "MLB1796789816",
+        "variation_id": null,
+        "dimensions_source": {
+            "origin": "similarity",
+            "id": "MLB1796789816__1"
+        },
+        "description": "Patch Cord Multimode 2sc-2sc 2,5m Nexans Amarelo",
+        "order_id": "2000008496003350",
+        "user_product_id": null,
+        "sender_id": 339836955,
+        "dimensions": {
+            "width": 21,
+            "length": 26,
+            "weight": 350,
+            "height": 3
+        }
+    }
+]

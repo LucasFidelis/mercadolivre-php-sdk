@@ -3,6 +3,7 @@
 use LucasFidelis\MercadoLivreSdk\Client\Client;
 use LucasFidelis\MercadoLivreSdk\Entities\Shipment;
 use LucasFidelis\MercadoLivreSdk\Entities\ShipmentCosts;
+use LucasFidelis\MercadoLivreSdk\Entities\ShipmentItem;
 use LucasFidelis\MercadoLivreSdk\Managers\ShipmentManager;
 use PHPUnit\Framework\TestCase;
 
@@ -44,5 +45,15 @@ class ShipmentManagerTest extends TestCase
         $this->assertEquals(71.3, $shipmentCosts->getGrossAmount());
         $this->assertEquals(20.45, $shipmentCosts->getSenders()[0]->getCost());
         $this->assertEquals(0, $shipmentCosts->getReceiver()->getCost());
+    }
+
+    public function testMustGetShipmentItems(): void
+    {
+        $this->clientStub->method('get')
+            ->willReturn($this->getMockData('items/43487963697.json'));
+        $shipmentItems = $this->sut->getShipmentItems(43487963697);
+        $this->assertIsArray($shipmentItems);
+        $this->assertContainsOnlyInstancesOf(ShipmentItem::class, $shipmentItems);
+        $this->assertEquals('Patch Cord Singlemode 2sc-2lc 1,5m Nexans Azul', $shipmentItems[0]->getDescription());
     }
 }
