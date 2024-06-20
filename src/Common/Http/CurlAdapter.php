@@ -12,7 +12,7 @@ class CurlAdapter implements HttpClientInterface
     public function request(string $url, HttpMethod $method, array $headers = [], ?string $body = null): string
     {
         $ch = curl_init($url);
-        $headers = [...$headers, 'Content-Type: application/json'];
+        $headers = ['Content-Type: application/json', ...$headers];
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $method->value);
         if ($body) {
             curl_setopt($ch, CURLOPT_POSTFIELDS, $body);
