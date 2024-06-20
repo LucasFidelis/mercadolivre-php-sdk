@@ -90,8 +90,9 @@ class ProductManager extends Manager
         $body = [
             'available_quantity' => $product->getAvailableQuantity()
         ];
-        $this->client->put($url, json_encode($body));
-        return $this->findById($itemId);
+        $response = $this->client->put($url, json_encode($body));
+        $data = json_decode($response, true);
+        return new Product($data);
     }
 
     /**
@@ -117,8 +118,9 @@ class ProductManager extends Manager
             'price' => $product->getPrice(),
         ];
         $body = json_encode($body);
-        $this->client->put($url, $body);
-        return $this->findById($itemId);
+        $response = $this->client->put($url, $body);
+        $data = json_decode($response, true);
+        return new Product($data);
     }
 
     public function createProduct(Product $product): Product
