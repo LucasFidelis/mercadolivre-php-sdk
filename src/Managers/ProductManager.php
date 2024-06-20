@@ -134,4 +134,16 @@ class ProductManager extends Manager
         $itemId = $data['id'];
         return $this->findById($itemId);
     }
+
+    public function updateStatus(Product $product): Product
+    {
+        $itemId = $product->getId();
+        $url = parent::factoryURL(self::$ITEM_URL, ['itemId' => $itemId]);
+        $body = [
+            'status' => $product->getStatus(),
+        ];
+        $body = json_encode($body);
+        $this->client->put($url, $body);
+        return $this->findById($itemId);
+    }
 }
