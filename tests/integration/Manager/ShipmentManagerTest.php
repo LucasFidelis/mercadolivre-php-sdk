@@ -56,4 +56,14 @@ class ShipmentManagerTest extends TestCase
         $this->assertContainsOnlyInstancesOf(ShipmentItem::class, $shipmentItems);
         $this->assertEquals('Patch Cord Singlemode 2sc-2lc 1,5m Nexans Azul', $shipmentItems[0]->getDescription());
     }
+
+    public function testMustGetShipmentLabelAsZPL(): void
+    {
+        $this->clientStub->method('get')
+            ->willReturn($this->getMockData('labels/zpl/43498572272.zip'));
+        $shipmentLabel = $this->sut->getShipmentLabelAsZPL(43498572272);
+        $this->assertIsString($shipmentLabel);
+        $this->assertStringContainsString('^XA', $shipmentLabel);
+        $this->assertStringContainsString('^XZ', $shipmentLabel);
+    }
 }
