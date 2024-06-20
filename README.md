@@ -60,6 +60,7 @@ $productManager->updatePrice($product);
 | Get Shipment by ID | ✅ |
 | Get Shipment Costs | ✅ |
 | Get Shipment Items | ✅ |
+| Get Shipment Label as ZPL | ✅ |
 
 ## Contribute
 
