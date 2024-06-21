@@ -17,7 +17,7 @@ class ShipmentManagerTest extends TestCase
 
     public function setUp(): void
     {
-        $this->clientStub = $this->createStub(Client::class);
+        $this->clientStub = $this->createMock(Client::class);
         $this->sut = new ShipmentManager($this->clientStub);
     }
 
@@ -31,6 +31,7 @@ class ShipmentManagerTest extends TestCase
     {
         $this->clientStub->method('get')
             ->willReturn($this->getMockData('43474637041.json'));
+        $this->clientStub->expects($this->once())->method('get')->with($this->stringContains('/shipments/43474637041'));
         $shipment =  $this->sut->getShipmentById(43474637041);
         $this->assertInstanceOf(Shipment::class, $shipment);
         $this->assertEquals('ready_to_ship', $shipment->getStatus());
@@ -40,6 +41,7 @@ class ShipmentManagerTest extends TestCase
     {
         $this->clientStub->method('get')
             ->willReturn($this->getMockData('costs/43474637041.json'));
+        $this->clientStub->expects($this->once())->method('get')->with($this->stringContains('/shipments/43474637041/costs'));
         $shipmentCosts =  $this->sut->getShipmentCosts(43474637041);
         $this->assertInstanceOf(ShipmentCosts::class, $shipmentCosts);
         $this->assertEquals(71.3, $shipmentCosts->getGrossAmount());
@@ -51,6 +53,7 @@ class ShipmentManagerTest extends TestCase
     {
         $this->clientStub->method('get')
             ->willReturn($this->getMockData('items/43487963697.json'));
+        $this->clientStub->expects($this->once())->method('get')->with($this->stringContains('/shipments/43487963697/items'));
         $shipmentItems = $this->sut->getShipmentItems(43487963697);
         $this->assertIsArray($shipmentItems);
         $this->assertContainsOnlyInstancesOf(ShipmentItem::class, $shipmentItems);

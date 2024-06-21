@@ -17,7 +17,7 @@ class ShipmentManager extends Manager
 
     public function getShipmentById(int $shipmentId): Shipment
     {
-        $url = parent::factoryURL(self::$GET_SHIPMENT_BY_ID_URL, ['shipmentId', $shipmentId]);
+        $url = parent::factoryURL(self::$GET_SHIPMENT_BY_ID_URL, ['shipmentId' => $shipmentId]);
         $response = $this->client->get($url);
         $data = json_decode($response, true);
         return new Shipment($data);
@@ -25,7 +25,7 @@ class ShipmentManager extends Manager
 
     public function getShipmentCosts(int $shipmentId): ShipmentCosts
     {
-        $url = parent::factoryURL(self::$GET_SHIPMENT_COSTS, ['shipmentId', $shipmentId]);
+        $url = parent::factoryURL(self::$GET_SHIPMENT_COSTS, ['shipmentId' => $shipmentId]);
         $response = $this->client->get($url);
         $data = json_decode($response, true);
         return new ShipmentCosts($data);
@@ -36,7 +36,7 @@ class ShipmentManager extends Manager
      */
     public function getShipmentItems(int $shipmentId): array
     {
-        $url = parent::factoryURL(self::$GET_SHIPMENT_ITEMS, ['shipmentId', $shipmentId]);
+        $url = parent::factoryURL(self::$GET_SHIPMENT_ITEMS, ['shipmentId' => $shipmentId]);
         $response = $this->client->get($url);
         $data = json_decode($response, true);
         return array_map(static function ($shipmentItemData) {
