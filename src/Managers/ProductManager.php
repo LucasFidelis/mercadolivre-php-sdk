@@ -148,4 +148,15 @@ class ProductManager extends Manager
         $this->client->put($url, $body);
         return $this->findById($itemId);
     }
+
+    public function updateProduct(Product $product): Product
+    {
+        $itemId = $product->getId();
+        $url = parent::factoryURL(self::$ITEM_URL, ['itemId' => $itemId]);
+        $body = $product->jsonSerialize();
+        unset($body['id']);
+        $response = $this->client->put($url, json_encode($body));
+        $data = json_decode($response, true);
+        return new Product($data);
+    }
 }
