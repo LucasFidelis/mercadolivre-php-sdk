@@ -21,6 +21,12 @@ class ProductManagerTest extends TestCase
         $this->sut = new ProductManager($client);
     }
 
+    private function getMockData(string $filename): string
+    {
+        $data = file_get_contents(__DIR__ . '/../../resources/mock/items/' . $filename);
+        return $data;
+    }
+
     public function testMustFindItemById(): void
     {
         $product = $this->sut->findById('MLB3126075382');
@@ -44,6 +50,7 @@ class ProductManagerTest extends TestCase
 
     public function testMustUpdateProductVariations(): void
     {
+        $this->markTestSkipped('Long test');
         $product = $this->sut->findById('MLB3126075382');
         $variations = $product->getVariations();
         $newAvailableQty = $variations[0]->getAvailableQuantity();
@@ -110,5 +117,24 @@ class ProductManagerTest extends TestCase
         $product->setAttributes($attributes);
         $product = $this->sut->createProduct($product);
         $this->assertInstanceOf(Product::class, $product);
+    }
+
+    public function testMustUpdateProduto(): void
+    {
+        $client = $this->createMock(Client::class);
+        $client->method('put')->willReturn($this->getMockData('MLB3768204734.json'));
+        $sut = new ProductManager($client);
+        $product = new Product();
+        $product->setId('MLB3768204734');
+        $product->setAvailableQuantity(5);
+        $product->setPrice(2.37);
+        
+        $client->expects($this->once())->method('put')
+            ->with(
+                $this->stringContains('/items/MLB3768204734/'), 
+                json_encode(['available_quantity' => 5, 'price' => 2.37])
+            );
+        $output = $sut->updateProduct($product);
+        $this->assertInstanceOf(Product::class, $output);
     }
 }

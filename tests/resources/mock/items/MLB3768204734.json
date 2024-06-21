@@ -1,0 +1,292 @@
+{
+  "id": "MLB3768204734",
+  "site_id": "MLB",
+  "title": "Controle Remoto Rossi Portão Nano Dz3 Dz4 433 Mhz",
+  "seller_id": 451811665,
+  "category_id": "MLB33412",
+  "official_store_id": null,
+  "price": 53,
+  "base_price": 53,
+  "original_price": null,
+  "currency_id": "BRL",
+  "initial_quantity": 13,
+  "sale_terms": [
+      {
+          "id": "WARRANTY_TYPE",
+          "name": "Tipo de garantia",
+          "value_id": "2230279",
+          "value_name": "Garantia de fábrica",
+          "value_struct": null,
+          "values": [
+              {
+                  "id": "2230279",
+                  "name": "Garantia de fábrica",
+                  "struct": null
+              }
+          ],
+          "value_type": "list"
+      },
+      {
+          "id": "WARRANTY_TIME",
+          "name": "Tempo de garantia",
+          "value_id": null,
+          "value_name": "12 meses",
+          "value_struct": {
+              "number": 12,
+              "unit": "meses"
+          },
+          "values": [
+              {
+                  "id": null,
+                  "name": "12 meses",
+                  "struct": {
+                      "number": 12,
+                      "unit": "meses"
+                  }
+              }
+          ],
+          "value_type": "number_unit"
+      }
+  ],
+  "buying_mode": "buy_it_now",
+  "listing_type_id": "gold_special",
+  "condition": "new",
+  "permalink": "https://produto.mercadolivre.com.br/MLB-3768204734-controle-remoto-rossi-porto-nano-dz3-dz4-433-mhz-_JM",
+  "thumbnail_id": "672505-MLB72478806271_102023",
+  "thumbnail": "http://http2.mlstatic.com/D_672505-MLB72478806271_102023-I.jpg",
+  "pictures": [
+      {
+          "id": "672505-MLB72478806271_102023",
+          "url": "http://http2.mlstatic.com/D_672505-MLB72478806271_102023-O.jpg",
+          "secure_url": "https://http2.mlstatic.com/D_672505-MLB72478806271_102023-O.jpg",
+          "size": "500x500",
+          "max_size": "500x500",
+          "quality": ""
+      },
+      {
+          "id": "656234-MLB72411246212_102023",
+          "url": "http://http2.mlstatic.com/D_656234-MLB72411246212_102023-O.jpg",
+          "secure_url": "https://http2.mlstatic.com/D_656234-MLB72411246212_102023-O.jpg",
+          "size": "500x500",
+          "max_size": "500x500",
+          "quality": ""
+      },
+      {
+          "id": "994098-MLB72478679041_102023",
+          "url": "http://http2.mlstatic.com/D_994098-MLB72478679041_102023-O.jpg",
+          "secure_url": "https://http2.mlstatic.com/D_994098-MLB72478679041_102023-O.jpg",
+          "size": "500x500",
+          "max_size": "500x500",
+          "quality": ""
+      },
+      {
+          "id": "846412-MLB72478570699_102023",
+          "url": "http://http2.mlstatic.com/D_846412-MLB72478570699_102023-O.jpg",
+          "secure_url": "https://http2.mlstatic.com/D_846412-MLB72478570699_102023-O.jpg",
+          "size": "500x500",
+          "max_size": "500x500",
+          "quality": ""
+      }
+  ],
+  "video_id": "iMrcFUcsMgw",
+  "descriptions": [],
+  "accepts_mercadopago": true,
+  "non_mercado_pago_payment_methods": [],
+  "shipping": {
+      "mode": "me2",
+      "methods": [],
+      "tags": [],
+      "dimensions": null,
+      "local_pick_up": false,
+      "free_shipping": false,
+      "logistic_type": "cross_docking",
+      "store_pick_up": false
+  },
+  "international_delivery_mode": "none",
+  "seller_address": {
+      "city": {
+          "id": "TUxCQ0JFVGQ3YmU",
+          "name": "Betim"
+      },
+      "state": {
+          "id": "BR-MG",
+          "name": "Minas Gerais"
+      },
+      "country": {
+          "id": "BR",
+          "name": "Brasil"
+      },
+      "search_location": {
+          "neighborhood": {
+              "id": "TUxCQlJFWkU5QkU5",
+              "name": "Rezende"
+          },
+          "city": {
+              "id": "TUxCQ1ZBUmJjNjk1",
+              "name": "Varginha"
+          },
+          "state": {
+              "id": "TUxCUE1JTlMxNTAyZA",
+              "name": "Minas Gerais"
+          }
+      },
+      "id": 1215102340
+  },
+  "seller_contact": null,
+  "location": {},
+  "coverage_areas": [],
+  "attributes": [
+      {
+          "id": "MANUFACTURER",
+          "name": "Fabricante",
+          "value_id": "2757057",
+          "value_name": "Rossi",
+          "values": [
+              {
+                  "id": "2757057",
+                  "name": "Rossi",
+                  "struct": null
+              }
+          ],
+          "value_type": "string"
+      },
+      {
+          "id": "BRAND",
+          "name": "Marca",
+          "value_id": "2757057",
+          "value_name": "Rossi",
+          "values": [
+              {
+                  "id": "2757057",
+                  "name": "Rossi",
+                  "struct": null
+              }
+          ],
+          "value_type": "string"
+      },
+      {
+          "id": "CONTROL_BUTTONS_NUMBER",
+          "name": "Quantidade de botões do controle",
+          "value_id": null,
+          "value_name": "2",
+          "values": [
+              {
+                  "id": null,
+                  "name": "2",
+                  "struct": null
+              }
+          ],
+          "value_type": "number"
+      },
+      {
+          "id": "FREQUENCY",
+          "name": "Frequência",
+          "value_id": null,
+          "value_name": "433 MHz",
+          "values": [
+              {
+                  "id": null,
+                  "name": "433 MHz",
+                  "struct": null
+              }
+          ],
+          "value_type": "string"
+      },
+      {
+          "id": "ITEM_CONDITION",
+          "name": "Condição do item",
+          "value_id": "2230284",
+          "value_name": "Novo",
+          "values": [
+              {
+                  "id": "2230284",
+                  "name": "Novo",
+                  "struct": null
+              }
+          ],
+          "value_type": "list"
+      },
+      {
+          "id": "MAX_REACH",
+          "name": "Alcance máximo",
+          "value_id": null,
+          "value_name": "10 m",
+          "values": [
+              {
+                  "id": null,
+                  "name": "10 m",
+                  "struct": {
+                      "number": 10,
+                      "unit": "m"
+                  }
+              }
+          ],
+          "value_type": "number_unit"
+      },
+      {
+          "id": "MODEL",
+          "name": "Modelo",
+          "value_id": null,
+          "value_name": "TX HCS",
+          "values": [
+              {
+                  "id": null,
+                  "name": "TX HCS",
+                  "struct": null
+              }
+          ],
+          "value_type": "string"
+      },
+      {
+          "id": "SELLER_SKU",
+          "name": "SKU",
+          "value_id": null,
+          "value_name": "019202",
+          "values": [
+              {
+                  "id": null,
+                  "name": "019202",
+                  "struct": null
+              }
+          ],
+          "value_type": "string"
+      },
+      {
+          "id": "UNITS_PER_PACK",
+          "name": "Unidades por kit",
+          "value_id": null,
+          "value_name": "10",
+          "values": [
+              {
+                  "id": null,
+                  "name": "10",
+                  "struct": null
+              }
+          ],
+          "value_type": "number"
+      }
+  ],
+  "listing_source": "",
+  "variations": [],
+  "status": "paused",
+  "sub_status": [
+      "out_of_stock"
+  ],
+  "tags": [
+      "incomplete_technical_specs",
+      "good_quality_thumbnail",
+      "extended_warranty_eligible",
+      "immediate_payment",
+      "cart_eligible"
+  ],
+  "warranty": "Garantia de fábrica: 12 meses",
+  "catalog_product_id": null,
+  "domain_id": "MLB-ALARM_REMOTE_CONTROLS",
+  "parent_item_id": null,
+  "deal_ids": [],
+  "automatic_relist": false,
+  "date_created": "2023-07-03T20:30:52.000Z",
+  "last_updated": "2024-06-21T11:35:50.000Z",
+  "health": 0.62,
+  "catalog_listing": false
+}
