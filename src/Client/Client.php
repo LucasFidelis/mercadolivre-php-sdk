@@ -15,15 +15,16 @@ class Client
     protected static $TEST_USER_URL = '/users/test_user';
 
     private string $redirect_uri;
-    private HttpClientInterface $httpClient;
+    private HttpClientInterface  $httpClient;
 
     public function __construct(
         private string $clientId,
         private string $clientSecret,
         private string $token = '',
-        private string $refresh_token = ''
+        private string $refresh_token = '',
+        ?HttpClientInterface $httpClient = null
     ) {
-        $this->httpClient = HttpClientFactory::create();
+        $this->httpClient = $httpClient ?? HttpClientFactory::create();
     }
 
     public function authorize(string $code, string $redirect_uri): string
