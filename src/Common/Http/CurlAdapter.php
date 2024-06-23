@@ -5,6 +5,7 @@ namespace LucasFidelis\MercadoLivreSdk\Common\Http;
 use LucasFidelis\MercadoLivreSdk\Common\Http\Errors\HttpBadRequest;
 use LucasFidelis\MercadoLivreSdk\Common\Http\Errors\HttpNotFound;
 use LucasFidelis\MercadoLivreSdk\Common\Http\Errors\HttpServerError;
+use LucasFidelis\MercadoLivreSdk\Common\Http\Errors\HttpTooManyRequests;
 use LucasFidelis\MercadoLivreSdk\Common\Http\Errors\HttpUnauthorized;
 
 class CurlAdapter implements HttpClientInterface
@@ -39,6 +40,8 @@ class CurlAdapter implements HttpClientInterface
                 throw new HttpUnauthorized($result);
             case 404:
                 throw new HttpNotFound($result);
+            case 429:
+                throw new HttpTooManyRequests($result);
             case 500:
                 throw new HttpServerError($result);
             default:
